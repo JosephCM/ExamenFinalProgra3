@@ -1,0 +1,22 @@
+﻿@model List<Empleado>
+
+<h2>Lista de Empleados</h2>
+<a href="/Empleados/Create">Agregar Nuevo Empleado</a>
+
+<table>
+    <tr>
+        <th>Carnet</th>
+        <th>Nombre</th>
+        <th>Salario</th>
+        <th>Categoría</th>
+    </tr>
+    @foreach (var emp in Model)
+    {
+        <tr>
+            <td>@emp.CarnetUnico</td>
+            <td>@emp.NombreCompleto</td>
+            <td>@emp.Salario</td>
+            <td>@emp.CategoriaLaboral</td>
+        </tr>
+    }
+</table>

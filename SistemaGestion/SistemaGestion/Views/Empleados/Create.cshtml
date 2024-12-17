@@ -1,0 +1,56 @@
+﻿@model SistemaGestion.Models.Empleado
+
+
+@{
+    ViewData["Title"] = "Crear Empleado";
+}
+
+<h2>Crear Empleado</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="CarnetUnico" class="control-label">Carnet Único</label>
+        <input asp-for="CarnetUnico" class="form-control" />
+        <span asp-validation-for="CarnetUnico" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NombreCompleto" class="control-label">Nombre Completo</label>
+        <input asp-for="NombreCompleto" class="form-control" />
+        <span asp-validation-for="NombreCompleto" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="FechaNacimiento" class="control-label">Fecha de Nacimiento</label>
+        <input asp-for="FechaNacimiento" type="date" class="form-control" />
+        <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Direccion" class="control-label">Dirección</label>
+        <input asp-for="Direccion" class="form-control" />
+        <span asp-validation-for="Direccion" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Telefono" class="control-label">Teléfono</label>
+        <input asp-for="Telefono" class="form-control" />
+        <span asp-validation-for="Telefono" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CorreoElectronico" class="control-label">Correo Electrónico</label>
+        <input asp-for="CorreoElectronico" class="form-control" />
+        <span asp-validation-for="CorreoElectronico" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Salario" class="control-label">Salario</label>
+        <input asp-for="Salario" class="form-control" />
+        <span asp-validation-for="Salario" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CategoriaLaboral" class="control-label">Categoría Laboral</label>
+        <select asp-for="CategoriaLaboral" asp-items="Html.GetEnumSelectList<SistemaGestion.Models.Categoria>()" class="form-control">
+        </select>
+        <span asp-validation-for="CategoriaLaboral" class="text-danger"></span>
+    </div>
+    <div class="form-group mt-2">
+        <button type="submit" class="btn btn-primary">Crear</button>
+        <a asp-action="Index" class="btn btn-secondary">Volver</a>
+    </div>
+</form>
